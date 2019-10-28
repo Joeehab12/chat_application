@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+# source 'http://gems.github.com'
+# source 'https://github.com/elastic/elasticsearch-rails.git'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
@@ -24,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'bunny' , ">= 2.13.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -58,5 +60,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem "webpacker"
-gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
-gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
+# gem 'elasticsearch-model'#, git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
+# gem 'elasticsearch-rails'#, git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'

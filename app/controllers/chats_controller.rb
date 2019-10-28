@@ -29,9 +29,19 @@ class ChatsController < ApplicationController
 
     def chat_params
     # whitelist params
-        params[:messages_count] = Message.where(chat_id: params[:id]).count
+        # params[:messages_count] = Message.where(chat_id: params[:id]).count
         params.permit(:name, :app_id,:messages_count)
     end
+
+    #PUT /applications/:token/chats/:id
+    def update
+        @application = Application.where(token: params[:token])
+        @chats = Chat.where(app_id: @application.ids)
+        @chat = @chats.where(id: params[:id])
+        @chat.update(chat_params)
+        render json: @chat
+    end
+
     def set_chat
         @application = Application.where(token: params[:token])
         @chat_temp = Chat.where(app_id: @application.ids)

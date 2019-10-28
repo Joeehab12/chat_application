@@ -1,5 +1,7 @@
 class Message < ApplicationRecord
     # belongs_to :chat
+    # require 'elasticsearch/model'
+
     include Elasticsearch::Model
     include Elasticsearch::Model::Callbacks
 

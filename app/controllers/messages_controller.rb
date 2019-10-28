@@ -45,9 +45,20 @@ class MessagesController < ApplicationController
         @messages_temp = Message.where(chat_id: @chat.ids)
         if query
             @messages_filtered = Message.where(chat_id: @chat.ids).search_elastic(query)
+            # @messages_filtered = Message.search_elastic(query)
         end
         render json: @messages_filtered
         # json_response(@application)
+    end
+    #PUT /applications/:token/chats/:id/messages/:msg_id
+    def update
+        @application = Application.where(token: params[:token])
+        @chats = Chat.where(app_id: @application.ids)
+        @chat = @chats.where(id: params[:id])
+        @messages = Message.where(chat_id: @chat.ids)
+        @message = @messages.where(id: params[:msg_id])
+        @message.update(message_params)
+        render json: @message
     end
 
     def message_params

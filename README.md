@@ -1,24 +1,48 @@
-# README
+# Instabug Backend Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository holds all the source code of the Instabug Backend Challenge Chatting Application
 
-Things you may want to cover:
+## Ruby Version
+This application runs on Ruby version 2.5.1
 
-* Ruby version
+## Installation
 
-* System dependencies
+Use [docker-compose](https://github.com/docker/compose) to install the application.
 
-* Configuration
+```bash
+$ docker-compose up
+```
 
-* Database creation
+Create the database
 
-* Database initialization
+```bash
+$ docker-compose run web rake db:create
+```
 
-* How to run the test suite
+Run database migrations to create database tables
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+```bash
+$ docker-compose run web rake db:migrate
+```
 
-* ...
+## Testing
+
+You can use [Postman](https://www.getpostman.com/) to test the application's endpoints
+
+* GET /applications
+* GET /applications/:token
+* POST /applications
+* PUT /applications/:token
+* GET /applications/:token/chats
+* GET /applications/:token/chats/:id
+* POST /applications/:token/chats
+* PUT /applications/:token/chats/:id
+* GET /applications/:token/chats/:id/messages
+* GET /applications/:token/chats/:id/messages/:msg_id
+* POST /applications/:token/chats/:id/messages
+* POST /applications/:token/chats/:id/messages//:query
+* PUT /applications/:token/chats/:id/messages/:msg_id
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
