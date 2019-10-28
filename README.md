@@ -41,7 +41,7 @@ You can use [Postman](https://www.getpostman.com/) to test the application's end
 * GET /applications/:token/chats/:id/messages
 * GET /applications/:token/chats/:id/messages/:msg_id
 * POST /applications/:token/chats/:id/messages
-* POST /applications/:token/chats/:id/messages//:query
+* POST /applications/:token/chats/:id/messages/:query
 * PUT /applications/:token/chats/:id/messages/:msg_id
 
 ## License
